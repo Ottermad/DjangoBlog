@@ -6,6 +6,8 @@ class Post(models.Model):
     title = models.CharField(unique=True, max_length=30)
     body = models.TextField()
     author = models.ForeignKey(User)
+    publication_date = models.DateTimeField()
+    is_draft = models.BooleanField(default=True)
 
 
 class Comment(models.Model):

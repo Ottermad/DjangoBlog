@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td>{{ post.title }}</td>
+          <td>{{ post.author.first_name }} {{ post.author.last_name }}</td>
+          <td>{{ post.publication_date }}</td>
+          <td><a href="#">View</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
